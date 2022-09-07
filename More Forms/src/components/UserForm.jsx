@@ -62,13 +62,19 @@ const UserForm = (props) => {
         }else{
             setPasswordError('')
         }
+        
+        if(e.target.value !== confirmpassword){
+            setConfirmpasswordError("Passwords do not match.")
+        }else{
+            setConfirmpasswordError('')
+        }
     };
 
     const handleConfirmpassword = (e) => {
         setConfirmpassword(e.target.value)
         if(e.target.value.length < 1){
             setConfirmpasswordError("Please confirm password!")
-        }else if(e.target.value !== { password }){
+        }else if(e.target.value !== password){
             setConfirmpasswordError("Passwords do not match.")
         }else{
             setConfirmpasswordError('')
